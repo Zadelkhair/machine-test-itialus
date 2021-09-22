@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('all/products', [ProductController::class, 'all']);
 Route::get('get/product', [ProductController::class, 'get']);
 Route::get('find/products', [ProductController::class, 'find']);
+Route::get('search/products', [ProductController::class, 'search']);
 Route::post('store/product', [ProductController::class, 'store']);
 Route::put('update/product', [ProductController::class, 'update']);
 Route::delete('delete/product', [ProductController::class, 'delete']);

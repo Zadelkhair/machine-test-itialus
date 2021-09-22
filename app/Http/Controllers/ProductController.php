@@ -49,7 +49,7 @@ class ProductController extends Controller
 
         $validator = Validator::make($request->all(), [
             'by' => ['required'],
-            'value' => ['required']
+            'value' => ['required'],
         ]);
 
         if ($validator->fails()) {
@@ -58,7 +58,47 @@ class ProductController extends Controller
 
         } else {
 
-            $products = \App\Models\Product::where($request->by,$request->value)->get();
+            $products = null;
+
+            if(isset($request->type) && $request->type == 'like'){
+                $products = \App\Models\Product::where($request->by,'LIKE','%'.$request->value.'%')->get();
+            }
+            else{
+                $products = \App\Models\Product::where($request->by,$request->value)->get();
+            }
+
+            if($products != null){
+                $response['success'] = true;
+                $response['data'] = $products;
+            }
+            else{
+                $response['data'] = 'There is no product with this proprieties';
+            }
+
+        }
+
+        return $response;
+    }
+
+    public function search(Request $request){
+        $response = array('data' => '', 'success'=>false);
+
+        $validator = Validator::make($request->all(), [
+            'search' => ['required']
+        ]);
+
+        if ($validator->fails()) {
+
+            $response['data'] = $validator->messages();
+
+        } else {
+
+            $products = \App\Models\Product::
+                where('name', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('category', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('quantity', '=', $request->search)
+                ->orWhere('status', 'LIKE', $request->search)
+                ->get();
 
             if($products != null){
                 $response['success'] = true;
@@ -106,7 +146,6 @@ class ProductController extends Controller
         return $response;
     }
 
-
     public function update(Request $request)
     {
         $response = array('data' => '', 'success'=>false);
@@ -146,7 +185,6 @@ class ProductController extends Controller
         return $response;
     }
 
-
     public function delete(Request $request)
     {
         $response = array('data' => '', 'success'=>false);
@@ -185,4 +223,5 @@ class ProductController extends Controller
 
         return $response;
     }
+
 }
