@@ -113,7 +113,6 @@ class ProductController extends Controller
         return $response;
     }
 
-
     public function store(Request $request)
     {
         $response = array('data' => '', 'success'=>false);
