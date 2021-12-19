@@ -89,9 +89,9 @@ export class EditClientComponent implements OnInit {
       this.invalid.contact_email.push('contact email is required');
     }
 
-    // if (Object.keys(this.invalid).length != 0) {
-    //   return;
-    // }
+    if (Object.keys(this.invalid).length != 0) {
+      return;
+    }
 
     if (this.client.client_id) {
       this.loading = true;
