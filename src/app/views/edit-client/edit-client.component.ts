@@ -101,7 +101,7 @@ export class EditClientComponent implements OnInit {
         console.log(client);
 
         console.log('updated');
-        this.router.navigate(['clients'], { queryParams: { updated_client: client.client_id } });
+        this.router.navigate(['clients'], { queryParams: { updated_client: this.client.client_id } });
       }, (error) => {
         this.loading = false;
 
