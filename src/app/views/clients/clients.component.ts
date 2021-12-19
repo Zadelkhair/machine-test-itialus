@@ -115,6 +115,7 @@ export class ClientsComponent implements OnInit {
 
   goToPage(p: number) {
     this.pagination?.goToPage(p);
+    this.itemStyle();
   }
 
   nextPage() {
