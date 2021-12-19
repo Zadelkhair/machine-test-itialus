@@ -21,27 +21,28 @@ export class ClientService {
   }
 
   all(): Observable<Client[]> {
+    //return this.http.get<Client[]>(this.apiUrl + '/clients', {headers:this.headers});
     return this.http.get<Client[]>(this.apiUrl + '/clients', {headers:this.headers});
   }
 
   byid(id: number) : Observable<Client> {
-    return this.http.get<Client>(this.apiUrl + '/clients/' + id, { headers: this.headers });
-    // return this.http.get<Client>(this.apiUrl + '/details?client_id=' + id, { headers: this.headers });
+    //return this.http.get<Client>(this.apiUrl + '/clients/' + id, { headers: this.headers });
+    return this.http.get<Client>(this.apiUrl + '/clients/details?client_id=' + id, { headers: this.headers });
   }
 
   create(client: Client) : Observable<Client> {
-    return this.http.post<Client>(this.apiUrl + '/clients', client, { headers: this.headers });
-    // return this.http.post(this.apiUrl + '/add', client, { headers: this.headers });
+    //return this.http.post<Client>(this.apiUrl + '/clients', client, { headers: this.headers });
+    return this.http.post<Client>(this.apiUrl + '/clients/add', client, { headers: this.headers });
   }
 
   update(client: Client) : Observable<Client> {
-    return this.http.put<Client>(this.apiUrl + '/clients/'+ client.client_id, client, { headers: this.headers });
-    // return this.http.post(this.apiUrl + '/update', client, { headers: this.headers });
+    //return this.http.put<Client>(this.apiUrl + '/clients/'+ client.client_id, client, { headers: this.headers });
+    return this.http.post<Client>(this.apiUrl + '/clients/update', client, { headers: this.headers });
   }
 
   delete(client: Client) : Observable<Client> {
-    return this.http.delete<Client>(this.apiUrl + '/clients/' + client.client_id, { headers: this.headers });
-    // return this.http.post(this.apiUrl + '/delete/' + client.client_id, { headers: this.headers });
+    //return this.http.delete<Client>(this.apiUrl + '/clients/' + client.client_id, { headers: this.headers });
+    return this.http.post<Client>(this.apiUrl + '/clients/delete/' + client.client_id, { headers: this.headers });
   }
 
 }

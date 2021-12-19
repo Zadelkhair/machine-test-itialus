@@ -4,6 +4,24 @@
       <h4 class="card-title">clients :</h4>
       <button class="btn btn-success" routerLink="/client/create">create</button>
     </div>
+    <hr>
+    <div class="d-flex align-items-center filter-tools mt-4">
+      <label for="" class="m-0 mr-2">Search :</label>
+      <input type="text" [(ngModel)]="serachInput" (ngModelChange)="onFilterChanged()">
+      <span class="mx-3">|</span>
+      <label for="" class="m-0 mr-2">Sort :</label>
+      <select name="" id="" [(ngModel)]="sortBy" (ngModelChange)="onFilterChanged()">
+        <option value="first_name">first name</option>
+        <option value="last_name">last name</option>
+        <option value="city">city</option>
+        <option value="state">state</option>
+        <option value="date_added">date added</option>
+      </select>
+      <button (click)="changeOrder()" type="button" name="" id="" class="btn btn-sm btn-secondary mx-2">
+        {{ orederDesc==0?'-':orederDesc==1?'asc':'desc' }}
+      </button>
+    </div>
+    <hr>
     <div>
       <div class="row mt-4" *ngIf="!pagination">
         <div *ngFor="let client of clients" class="col-4">
@@ -32,18 +50,15 @@
       </div>
       <div class="row mt-4" *ngIf="pagination">
         <div *ngFor="let client of pagination.data" class="col-4">
-          <div class="client-obj">
+          <div class="client-obj"
+            [ngClass]="[created_client==client.client_id?'created_client':'',updated_client==client.client_id?'updated_client':'']">
             <div class="item-actions">
               <button (click)="showClientDetails(client)" class="btn view-btn"><i class="fa fa-eye"
                   aria-hidden="true"></i></button>
               <button class="btn edit-btn" [routerLink]="['/client/'+client.client_id]"><i
                   class="fas fa-edit"></i></button>
-              <button
-                angularConfirmModal
-                class="btn close-btn"
-                [message]="'Are you sure?'"
-                (onConfirm)="deleteClient(client)"><i
-                  class="fa fa-window-close"></i></button>
+              <button angularConfirmModal class="btn close-btn" [message]="'Are you sure?'"
+                (onConfirm)="deleteClient(client)"><i class="fa fa-window-close"></i></button>
             </div>
             <div>
               <span class="m-0 my-4 cl-name">{{ client.first_name + ' ' + client.last_name}}</span>
@@ -95,14 +110,23 @@
       </div>
       <div class="modal-body">
         <ng-container *ngIf="selectedClient">
-          <span>first name : {{ selectedClient.first_name }}</span><br>
-          <span>last name : {{ selectedClient.last_name }}</span><br>
-          <span>company : {{ selectedClient.company_name }}</span>
-          <span>city : {{ selectedClient.city }}</span>
-          <span>state : {{ selectedClient.company_name }}</span>
-          <span>date added : {{ selectedClient.date_added }}</span>
+          <div class="row">
+            <div class="col-4">
+              <div class="client-img" [ngStyle]="{'background-image': 'url('+(selectedClient.photo_url??'https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png')+')'}"></div>
+            </div>
+            <div class="col-8">
+              <span>first name : {{ selectedClient.first_name }}</span><br>
+              <span>last name : {{ selectedClient.last_name }}</span><br>
+              <span>company : {{ selectedClient.company_name }}</span><br>
+              <span>state : {{ selectedClient.company_name }}</span><br>
+              <span>city : {{ selectedClient.city }}</span><br>
+              <span>street address : {{ selectedClient.street_address }}</span><br>
+              <span>contact email : {{ selectedClient.contact_email }}</span><br>
+              <span>contact phone : {{ selectedClient.contact_phone }}</span><br>
+              <span>date added : {{ selectedClient.date_added }}</span>
+            </div>
+          </div>
         </ng-container>
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -190,5 +214,52 @@
 
   .cl-name {
     font-weight: bold;
+  }
+
+  .created_client {
+    animation-name: created_client;
+    animation-duration: 5s;
+  }
+
+  .updated_client {
+    animation-name: updated_client;
+    animation-duration: 5s;
+  }
+
+  @keyframes created_client {
+    from {
+      background: rgb(202, 255, 202);
+      color: green;
+    }
+
+    to {
+      background: auto;
+      color: auto;
+    }
+  }
+
+  @keyframes updated_client {
+    from {
+      background: rgb(198, 198, 255);
+      color: blue;
+    }
+
+    to {
+      background: auto;
+      color: auto;
+    }
+  }
+
+  .filter-tools {
+    display: flex;
+  }
+
+  .client-img {
+    background: lightgray;
+    height: 150px;
+    width: 100%;
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;
   }
 </style>

@@ -58,7 +58,7 @@ export default class Pagination<T> {
 
   goToItemPage(item?: T) {
     if (item)
-      this.goToPage(Math.floor((this._data.indexOf(item)+1)/this.dataPerPage)+1);
+      this.goToPage(Math.floor((this._data.indexOf(item))/this.dataPerPage)+1);
   }
 
 }

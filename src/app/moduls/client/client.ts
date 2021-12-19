@@ -10,4 +10,5 @@ export default class Client {
   contact_email!: string;
   contact_phone!:string;
   date_added!:string;
+  photo_url?:string;
 }
