@@ -1,5 +1,5 @@
+import { environment } from './../../environments/environment.prod';
 import { Injectable } from '@angular/core';
-import product from '../views/types/product';
 import { HttpClient , HttpHeaders } from '@angular/common/http';
 
 @Injectable({
@@ -10,34 +10,34 @@ export class ProductService {
 
   constructor() { }
 
-  all(): product[] {
+  // all(): product[] {
 
-    let prods : product[] = [];
+  //   let prods : product[] = [];
 
-    return prods;
+  //   environment
 
-  }
+  //   return prods;
 
-  get(): product {
+  // }
 
-    let prod : product = new product();
+  // get(): product {
 
-    return prod;
+  //   let prod : product = new product();
 
-  }
+  //   return prod;
 
-  create():void {
+  // }
 
-  }
+  // create():void {
 
-  update(): void {
+  // }
 
-  }
+  // update(): void {
 
-  delete(): void {
+  // }
 
-  }
+  // delete(): void {
 
-
+  // }
 
 }

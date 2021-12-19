@@ -1,0 +1,310 @@
+{
+  "clients": [
+    {
+      "client_id": "1",
+      "first_name": "James",
+      "last_name": "Johnson",
+      "company_name": "ABDC Company, INC.",
+      "city": "Orlando",
+      "state": "FL",
+      "date_added": "2019-09-18"
+    },
+    {
+      "client_id": "3",
+      "first_name": "Hannah",
+      "last_name": "Lopez",
+      "company_name": "Sky Marketing Services",
+      "city": "Orlando",
+      "state": "FL",
+      "date_added": "2021-03-05"
+    },
+    {
+      "client_id": "5",
+      "first_name": "Richard",
+      "last_name": "Lewiss",
+      "company_name": "Southwest Loans, LLC.",
+      "city": "Miami",
+      "state": "FL",
+      "date_added": "2020-04-11"
+    },
+    {
+      "client_id": "6",
+      "first_name": "Carla",
+      "last_name": "Munoz",
+      "company_name": "InExtremis Designs, LLC.",
+      "city": "Miami",
+      "state": "FL",
+      "date_added": "2020-04-11"
+    },
+    {
+      "client_id": "7",
+      "first_name": "Larry",
+      "last_name": "Rudolph",
+      "company_name": "comp",
+      "city": "Atlanta",
+      "state": "GA",
+      "date_added": "2021-03-17"
+    },
+    {
+      "client_id": "9",
+      "first_name": "Jimmy",
+      "last_name": "Rudolph",
+      "company_name": "Orlando Home Improvements, LLC.",
+      "city": "Jacksonville",
+      "state": "FL",
+      "date_added": "2021-03-17"
+    },
+    {
+      "client_id": "10",
+      "first_name": "Alice",
+      "last_name": "James",
+      "company_name": "Downtown Cafe",
+      "city": "Miami",
+      "state": "FL",
+      "date_added": "2021-03-17"
+    },
+    {
+      "client_id": "11",
+      "first_name": "Bob",
+      "last_name": "Davis",
+      "company_name": "Innov Graphix",
+      "city": "West Palm Beach",
+      "state": "FL",
+      "date_added": "2020-05-29"
+    },
+    {
+      "client_id": "12",
+      "first_name": "Jenny",
+      "last_name": "Hidalgo",
+      "company_name": "Glide Financial, INC",
+      "city": "Orlando",
+      "state": "FL",
+      "date_added": "2020-08-17"
+    },
+    {
+      "client_id": "13",
+      "first_name": "Fred",
+      "last_name": "Quimby",
+      "company_name": "Anderton & Co.",
+      "city": "Orlando",
+      "state": "FL",
+      "date_added": "2021-03-21"
+    },
+    {
+      "client_id": "14",
+      "first_name": "Carlton",
+      "last_name": "Palmer",
+      "company_name": "comp",
+      "city": "Winter Park",
+      "state": "FL",
+      "date_added": "2021-10-22"
+    },
+    {
+      "client_id": "15",
+      "first_name": "James",
+      "last_name": "Phillip",
+      "company_name": "Greater Systems, INC",
+      "city": "Orlando",
+      "state": "FL",
+      "date_added": "2020-09-15"
+    },
+    {
+      "client_id": "16",
+      "first_name": "John",
+      "last_name": "Denver",
+      "company_name": "Denver Productions",
+      "city": "Orlando",
+      "state": "FL",
+      "date_added": "2021-01-18"
+    },
+    {
+      "client_id": "18",
+      "first_name": "John",
+      "last_name": "Hunani",
+      "company_name": "Orlando Home Improvements, LLC.",
+      "city": "Miami",
+      "state": "FL",
+      "date_added": "2020-01-13"
+    },
+    {
+      "client_id": "20",
+      "first_name": "Jerry",
+      "last_name": "Daleano",
+      "company_name": "Orlando Home Improvements, LLC.",
+      "city": "Goral Gables",
+      "state": "FL",
+      "date_added": "2019-09-17"
+    },
+    {
+      "client_id": "23",
+      "first_name": "Eduardo",
+      "last_name": "Sidan",
+      "company_name": "Sidan Industries",
+      "city": "Miami",
+      "state": "FL",
+      "date_added": "2021-03-17"
+    },
+    {
+      "client_id": "24",
+      "first_name": "Omar",
+      "last_name": "Sivori",
+      "company_name": "HIS Bank",
+      "city": "Orlando",
+      "state": "FL",
+      "date_added": "2020-05-12"
+    },
+    {
+      "client_id": "25",
+      "first_name": "Felipe",
+      "last_name": "Londana",
+      "company_name": "comp",
+      "city": "Tampa",
+      "state": "FL",
+      "date_added": "2021-03-17"
+    },
+    {
+      "client_id": "26",
+      "first_name": "Rajesh",
+      "last_name": "Bandar",
+      "company_name": "Gunter & Associates",
+      "city": "Newark",
+      "state": "NJ",
+      "date_added": "2020-09-21"
+    },
+    {
+      "client_id": "27",
+      "first_name": "Philip",
+      "last_name": "Johns",
+      "company_name": "Woodland Trades",
+      "city": "Miami",
+      "state": "FL",
+      "date_added": "2020-11-18"
+    },
+    {
+      "client_id": "28",
+      "first_name": "Larry",
+      "last_name": "David",
+      "company_name": "ProEvo Beauty",
+      "city": "Orlando",
+      "state": "FL",
+      "date_added": "2020-11-10"
+    },
+    {
+      "client_id": "29",
+      "first_name": "Carmella",
+      "last_name": "Lopez",
+      "company_name": "comp",
+      "city": "Miami",
+      "state": "FL",
+      "date_added": "2021-01-07"
+    },
+    {
+      "client_id": "30",
+      "first_name": "Jasmin",
+      "last_name": "Hunt",
+      "company_name": "Queens Resellers",
+      "city": "Orlando",
+      "state": "FL",
+      "date_added": "2021-05-26"
+    },
+    {
+      "client_id": "31",
+      "first_name": "Philip",
+      "last_name": "Stutter",
+      "company_name": "Standard de Liege",
+      "city": "Bayonne",
+      "state": "NJ",
+      "date_added": "2021-06-08"
+    },
+    {
+      "client_id": "32",
+      "first_name": "John",
+      "last_name": "Alves",
+      "company_name": "comp",
+      "city": "Orlando",
+      "state": "FL",
+      "date_added": "2021-01-29"
+    },
+    {
+      "client_id": "33",
+      "first_name": "George",
+      "last_name": "Adams",
+      "company_name": "Adams Food Deliveries",
+      "city": "Miami",
+      "state": "FL",
+      "date_added": "2021-03-29"
+    },
+    {
+      "client_id": "34",
+      "first_name": "Judy",
+      "last_name": "Greer",
+      "company_name": "South Florida Homes, LLC.",
+      "city": "Winter Park",
+      "state": "FL",
+      "date_added": "2021-03-16"
+    },
+    {
+      "client_id": "35",
+      "first_name": "Cody",
+      "last_name": "Hainz",
+      "company_name": "compp",
+      "city": "New York City",
+      "state": "NY",
+      "date_added": "2021-03-12"
+    },
+    {
+      "client_id": "36",
+      "first_name": "Kyle",
+      "last_name": "Gruber",
+      "company_name": "Galili, LLC.",
+      "city": "Tampa",
+      "state": "FL",
+      "date_added": "2020-04-27"
+    },
+    {
+      "client_id": "38",
+      "first_name": "Pamellaa",
+      "last_name": "Wattsss",
+      "company_name": "comp",
+      "city": "Queens",
+      "state": "NY",
+      "date_added": "2021-02-18"
+    },
+    {
+      "client_id": "40",
+      "first_name": "Mechelle",
+      "last_name": "Myers",
+      "company_name": "Bernard and Levy Traders",
+      "city": "Aspernatur exercitat",
+      "state": "Rerum laborum Rerum",
+      "date_added": "1994-09-29"
+    },
+    {
+      "client_id": "43",
+      "first_name": "Madyson",
+      "last_name": "West",
+      "company_name": "Keebler Inc",
+      "city": "Graycebury",
+      "state": "Pennsylvania",
+      "date_added": "2021-10-05"
+    },
+    {
+      "client_id": "44",
+      "first_name": "Jodie",
+      "last_name": "Rippin",
+      "company_name": "Bayer, Russel and Kuhlman",
+      "city": "Wuckertton",
+      "state": "New York",
+      "date_added": "2021-09-08"
+    },
+    {
+      "first_name": "test",
+      "last_name": "test",
+      "company_name": "test",
+      "state": "test",
+      "city": "test",
+      "date_added": "2021-12-10",
+      "client_id": "e5wMI-e"
+    }
+  ]
+}

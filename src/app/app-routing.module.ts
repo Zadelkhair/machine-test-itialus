@@ -1,32 +1,22 @@
-import { ProductEditComponent } from './views/product-edit/product-edit.component';
-import { ProductsComponent } from './views/products/products.component';
-import { CategoryEditComponent } from './views/category-edit/category-edit.component';
-import { CategoriesComponent } from './views/categories/categories.component';
+import { EditClientComponent } from './views/edit-client/edit-client.component';
+import { ClientsComponent } from './views/clients/clients.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'categories',
+    redirectTo: 'clients',
     pathMatch: 'full'
   },
   {
-    path: 'products',
-    component: ProductsComponent
+    path: 'clients',
+    component: ClientsComponent
   },
   {
-    path: 'product/:id',
-    component: ProductEditComponent
-  },
-  {
-    path: 'categories',
-    component: CategoriesComponent
-  },
-  {
-    path: 'category/:id',
-    component: CategoryEditComponent
-  },
+    path: 'client/:id',
+    component:EditClientComponent,
+  }
 ];
 
 @NgModule({

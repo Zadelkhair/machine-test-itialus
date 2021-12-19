@@ -1,0 +1,194 @@
+<div class="card text-left">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-center">
+      <h4 class="card-title">clients :</h4>
+      <button class="btn btn-success" routerLink="/client/create">create</button>
+    </div>
+    <div>
+      <div class="row mt-4" *ngIf="!pagination">
+        <div *ngFor="let client of clients" class="col-4">
+          <div class="client-obj">
+            <div class="item-actions">
+              <button class="btn edit-btn" [routerLink]="['/client/'+client.client_id]"><i
+                  class="fas fa-edit"></i></button>
+              <button class="btn close-btn"><i class="fa fa-window-close"></i></button>
+            </div>
+            <div>
+              <h5 class="m-0 my-4">{{ client.first_name + ' ' + client.last_name}}</h5>
+            </div>
+          </div>
+        </div>
+        <ng-container *ngIf="loadingData">
+          <div class="col-4" *ngFor="let n of [1,2,3,4,5,6,7,8,9]">
+            <div class="client-obj" style="height: 150px;opacity:.3;">
+              <div class="placeholder-item"></div>
+              <div class="item-actions">
+              </div>
+              <div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <div class="row mt-4" *ngIf="pagination">
+        <div *ngFor="let client of pagination.data" class="col-4">
+          <div class="client-obj">
+            <div class="item-actions">
+              <button (click)="showClientDetails(client)" class="btn view-btn"><i class="fa fa-eye"
+                  aria-hidden="true"></i></button>
+              <button class="btn edit-btn" [routerLink]="['/client/'+client.client_id]"><i
+                  class="fas fa-edit"></i></button>
+              <button
+                angularConfirmModal
+                class="btn close-btn"
+                [message]="'Are you sure?'"
+                (onConfirm)="deleteClient(client)"><i
+                  class="fa fa-window-close"></i></button>
+            </div>
+            <div>
+              <span class="m-0 my-4 cl-name">{{ client.first_name + ' ' + client.last_name}}</span>
+              <br>
+              <span class="cl-company">{{ client.company_name }}</span>
+              <br>
+              <span class="cl-city">{{ client.city }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div *ngIf="pagination" class="col-12">
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <button (click)="prevPage()" class="page-link" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </button>
+              </li>
+              <li class="page-item" [ngClass]="[p==pagination.currentPage?'active':'']"
+                *ngFor="let p of pagination.pages"><button (click)="goToPage(p)" class="page-link"
+                  href="#">{{p}}</button>
+              </li>
+              <li class="page-item">
+                <button (click)="nextPage()" class="page-link" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Client detais</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ng-container *ngIf="selectedClient">
+          <span>first name : {{ selectedClient.first_name }}</span><br>
+          <span>last name : {{ selectedClient.last_name }}</span><br>
+          <span>company : {{ selectedClient.company_name }}</span>
+          <span>city : {{ selectedClient.city }}</span>
+          <span>state : {{ selectedClient.company_name }}</span>
+          <span>date added : {{ selectedClient.date_added }}</span>
+        </ng-container>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .client-obj {
+    border-style: dashed;
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 15px 10px;
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px 0px #00000011;
+    transition: ease .2s;
+    cursor: pointer;
+    background: whitesmoke;
+  }
+
+  .client-obj:hover {
+    box-shadow: 0 0 10px 0px #00000026;
+    transform: scale(1.01);
+    z-index: 99;
+  }
+
+  .item-actions {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    display: flex;
+  }
+
+  .close-btn {
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  .close-btn:hover {
+    color: red;
+  }
+
+  .edit-btn {
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  .edit-btn:hover {
+    color: blue;
+  }
+
+  .view-btn {
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  .view-btn:hover {
+    color: green;
+  }
+
+  .client-obj-close-hover {
+    box-shadow: 0 0 10px 0px #ff00003d !important;
+    transition: ease .2s;
+    color: red;
+  }
+
+  .client-obj-edit-hover {
+    box-shadow: 0 0 10px 0px #1900ff3d !important;
+    transition: ease .2s;
+    color: blue;
+  }
+
+  .client-obj-view-hover {
+    box-shadow: 0 0 10px 0px #26ff003d !important;
+    transition: ease .2s;
+    color: green;
+  }
+
+  .cl-name {
+    font-weight: bold;
+  }
+</style>
